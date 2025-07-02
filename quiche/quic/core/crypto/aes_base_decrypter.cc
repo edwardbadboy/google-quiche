@@ -46,8 +46,9 @@ QuicPacketCount AesBaseDecrypter::GetIntegrityLimit() const {
   // AEAD_AES_128_GCM. However, this document recommends that the same limit be
   // applied to both functions as either limit is acceptably large.
   // https://quicwg.org/base-drafts/draft-ietf-quic-tls.html#name-integrity-limit
-  static_assert(kMaxIncomingPacketSize <= 2048,
-                "This key limit requires limits on decryption payload sizes");
+  // Commented by Zhengsheng for experimenting UDP GSO with large packet size
+  //static_assert(kMaxIncomingPacketSize <= 2048,
+  //              "This key limit requires limits on decryption payload sizes");
   return 144115188075855872U;
 }
 

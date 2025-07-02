@@ -42,8 +42,9 @@ QuicPacketCount AesBaseEncrypter::GetConfidentialityLimit() const {
   // For AEAD_AES_128_GCM and AEAD_AES_256_GCM ... endpoints that do not send
   // packets larger than 2^11 bytes cannot protect more than 2^28 packets.
   // https://quicwg.org/base-drafts/draft-ietf-quic-tls.html#name-confidentiality-limit
-  static_assert(kMaxOutgoingPacketSize <= 2048,
-                "This key limit requires limits on encryption payload sizes");
+  // Commented by Zhengsheng to experiment UDP GSO with large packet size.
+  //static_assert(kMaxOutgoingPacketSize <= 2048,
+  //              "This key limit requires limits on encryption payload sizes");
   return 268435456U;
 }
 

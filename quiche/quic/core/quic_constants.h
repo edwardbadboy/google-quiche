@@ -43,11 +43,11 @@ inline constexpr QuicByteCount kEthernetMTU = 1500;
 // The maximum packet size of any QUIC packet over IPv6, based on ethernet's max
 // size, minus the IP and UDP headers. IPv6 has a 40 byte header, UDP adds an
 // additional 8 bytes.  This is a total overhead of 48 bytes.  Ethernet's
-// max packet size is 1500 bytes,  1500 - 48 = 1452.
-inline constexpr QuicByteCount kMaxV6PacketSize = 1452;
+// max packet size is 9000 bytes, 9000 - 48 = 8952.
+inline constexpr QuicByteCount kMaxV6PacketSize = 8952;
 // The maximum packet size of any QUIC packet over IPv4.
 // 1500(Ethernet) - 20(IPv4 header) - 8(UDP header) = 1472.
-inline constexpr QuicByteCount kMaxV4PacketSize = 1472;
+inline constexpr QuicByteCount kMaxV4PacketSize = 8972;
 // The maximum incoming packet size allowed.
 inline constexpr QuicByteCount kMaxIncomingPacketSize = kMaxV4PacketSize;
 // The maximum outgoing packet size allowed.
