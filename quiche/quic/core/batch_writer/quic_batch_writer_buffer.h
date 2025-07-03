@@ -80,7 +80,8 @@ class QUICHE_EXPORT QuicBatchWriterBuffer {
 
   // Rounded up from |kMaxGsoPacketSize|, which is the maximum allowed
   // size of a GSO packet.
-  static const size_t kBufferSize = 64 * 1024;
+  // Zhengsheng: increase the buffersize for sendmmsg to 64 * 8592 packets, round to 1024-alignment.
+  static const size_t kBufferSize = 573440;
 
   std::string DebugString() const;
 
